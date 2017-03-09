@@ -13,6 +13,8 @@ sortStrategy.h
 D:/heap/sortStrategy.h
 iostream
 -
+cstdlib
+-
 
 D:/heap/heap.h
 iostream

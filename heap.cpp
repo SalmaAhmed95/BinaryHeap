@@ -13,7 +13,7 @@ int main()
     //maxHeap.heap_sort(a);
     //cout<<maxHeap.heap_extractMax(a)<<endl;
     //maxHeap.insert(a,18)
-    bubbleSort sorter;
+    bubbleSort <int> sorter;
     sortInterface &interface = sorter;
     sorter.sort(a);
     for(int i=0;i<10;i++){
