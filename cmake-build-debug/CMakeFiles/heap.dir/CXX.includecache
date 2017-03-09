@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-D:/heap/cmake-build-debug/heap.h
-iostream
--
-vector
-D:/heap/cmake-build-debug/vector
-
 D:/heap/heap.cpp
-cmake-build-debug/heap.h
-D:/heap/cmake-build-debug/heap.h
+heap.h
+D:/heap/heap.h
+sortStrategy.h
+D:/heap/sortStrategy.h
 iostream
 -
-cstdlib
+
+D:/heap/heap.h
+iostream
 -
+
+D:/heap/sortStrategy.h
 

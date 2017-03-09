@@ -82,10 +82,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/heap/cmake-build-debug/heap.h">
+		<Unit filename="D:/heap/heap.cpp">
 			<Option target="heap"/>
 		</Unit>
-		<Unit filename="D:/heap/heap.cpp">
+		<Unit filename="D:/heap/heap.h">
 			<Option target="heap"/>
 		</Unit>
 		<Unit filename="D:/heap/CMakeLists.txt">
