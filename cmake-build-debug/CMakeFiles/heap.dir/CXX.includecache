@@ -15,10 +15,16 @@ iostream
 -
 cstdlib
 -
+priorityQueue.h
+D:/heap/priorityQueue.h
 
 D:/heap/heap.h
 iostream
 -
+
+D:/heap/priorityQueue.h
+heap.h
+D:/heap/heap.h
 
 D:/heap/sortStrategy.h
 

@@ -20,17 +20,16 @@ private:
 
 public:
 
-    heap(T array[],int heap_size);
+    heap(int heap_size);
     void heap_sort(T array[]);
     T heap_extractMax(T array[]);
     void insert(T array[],T element);
 };
 /* fills the given array into a vector in order to construct the heap*/
 template <class T>
-heap<T>::heap(T array[],int size)
+heap<T>::heap(int size)
 {
    heap_size=size-1;
-    build_maxHeap(array);
 }
 /*keeps the heap property of MAX_HEAP*/
 template <class T>
@@ -76,6 +75,7 @@ void heap<T>::heap_sort(T array[]) {
 /* extracts the maximum element in array which is the root of max heap*/
 template <class T>
 T heap<T>::heap_extractMax(T array[]){
+    build_maxHeap(array);
     T max=array[1];
     array[1]=array[heap_size];
     heap_size--;
@@ -104,6 +104,7 @@ void heap<T>::bubbleUp(T array[],int index)
 template <class T>
 void heap<T>::insert(T array [],T element)
 {
+    build_maxHeap(array);
     array[heap_size+1] = element;
     bubbleUp(array,heap_size+1);
 }
