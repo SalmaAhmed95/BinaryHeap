@@ -11,7 +11,7 @@ class sortInterface
 {
 
 public:
-    virtual void sort(T array []){ };
+    virtual void sort(T array [],int low ,int high){ };
 
 };
 
@@ -52,15 +52,38 @@ public:
         }
     }
 };
+
 /* Quick Sort implementation*/
 template <class T>
 class quickSort : public sortInterface <T>
 {
+public:
+       virtual void sort(T arr[], int left, int right) {
+            int i = left, j = right;
+            int tmp;
+            int pivot = arr[(left + right) / 2];
 
-    virtual void sort(T array[])
-    {
-        //implementation
-    }
+            /* partition */
+            while (i <= j) {
+                while (arr[i] < pivot)
+                    i++;
+                while (arr[j] > pivot)
+                    j--;
+                if (i <= j) {
+                    tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                    i++;
+                    j--;
+                }
+            };
+
+            /* recursion */
+            if (left < j)
+                sort(arr, left, j);
+            if (i < right)
+                sort(arr, i, right);
+        }
 };
                                           /**O(n2) algorithms**/
 /* Bubble Sort implementation*/
@@ -68,9 +91,23 @@ template <class T>
 class bubbleSort : public sortInterface <T>
 {
 public:
-    virtual void sort(T array[])
+    virtual void sort(T array[],int size)
     {
+        bool notSorted = true;
+        int j = 0;
+        T temp;
+        while (notSorted) {
+            notSorted = false;
+            for (int i = 0; i < (size - 1 - j); i++) {
+                if (array[i] > array[i + 1]) {
+                    notSorted = true;
+                    temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                }
+            }
 
+        }
     }
 };
 
@@ -78,20 +115,33 @@ public:
 template <class T>
 class insertionSort : public sortInterface <T>
 {
-
-    virtual void sort(T array[])
+public:
+    virtual void sort(T array[],int size)
     {
-        //implementation
+        T element;
+        int j;
+        for (int i = 2; i < size; i++) {
+            element = array[i];
+            j = i - 1;
+            while(j >= 0 && array[j] > element) {
+                array[j + 1] = array[j];
+                j = j - 1;
+
+            }
+            array[j + 1] = element;
+        }
+
     }
 };
 /* selection Sort implementation*/
 template <class T>
 class selectionSort : public sortInterface <T>
 {
-    virtual void sort(T array[])
+public:
+    virtual void sort(T array[],int size)
     {
-        int n = (sizeof array / sizeof array[0]);
-        for (int i = 1 ;i < n; i++){
+        int n=size;
+        for (int i = 0 ;i < n-1; i++){
             /* set current element as minimum*/
             int min = i;
             /* check the element to be minimum */

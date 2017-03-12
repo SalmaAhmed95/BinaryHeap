@@ -106,6 +106,7 @@ void heap<T>::insert(T array [],T element)
 {
     build_maxHeap(array);
     array[heap_size+1] = element;
-    bubbleUp(array,heap_size+1);
+    heap_size++;
+    bubbleUp(array,heap_size);
 }
 #endif //HEAP_HEAP_H

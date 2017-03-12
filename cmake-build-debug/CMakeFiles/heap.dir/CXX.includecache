@@ -17,6 +17,10 @@ cstdlib
 -
 priorityQueue.h
 D:/heap/priorityQueue.h
+time.h
+-
+cstdio
+-
 
 D:/heap/heap.h
 iostream
